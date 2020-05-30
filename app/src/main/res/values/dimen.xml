@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="header_size">20sp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="image_height">350dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="margin_fab">24dp</dimen>
+</resources>
