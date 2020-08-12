@@ -1,5 +1,6 @@
 package com.spoelt.simpsonsquotes.ui.viewModel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,9 +14,13 @@ import java.io.IOException
 class MainViewModel : ViewModel() {
     private val apiService = ApiClient().getClient().create(ApiService::class.java)
 
-    var quoteList: MutableLiveData<MutableList<Quote>> = MutableLiveData()
+    val _quoteList: MutableLiveData<MutableList<Quote>> = MutableLiveData()
+    val quoteList: LiveData<MutableList<Quote>>
+        get() = _quoteList
 
-    var errorMessage: MutableLiveData<String> = MutableLiveData()
+    val _errorMessage: MutableLiveData<String> = MutableLiveData()
+    val errorMessage: MutableLiveData<String>
+        get() = _errorMessage
 
     init {
         getQuotes()
@@ -64,17 +69,17 @@ class MainViewModel : ViewModel() {
     }
 
     private fun fillListWithQuotes(data: ArrayList<Quote>) {
-        quoteList.value = data
-        errorMessage.value = ""
+        _quoteList.value = data
+        _errorMessage.value = ""
     }
 
     private fun handleError(message: String) {
-        errorMessage.value = message
+        _errorMessage.value = message
     }
 
     @ExperimentalStdlibApi
     fun getNextQuote() {
-        val list = quoteList.value
+        val list = _quoteList.value
 
         if (list.isNullOrEmpty()) {
             getQuotes()
@@ -86,7 +91,7 @@ class MainViewModel : ViewModel() {
         if (list.isEmpty()) {
             getQuotes()
         } else {
-            quoteList.value = list
+            _quoteList.value = list
         }
     }
 }
