@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "499838010614",
+    "project_id": "simpsons-quotes-88a4e",
+    "storage_bucket": "simpsons-quotes-88a4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499838010614:android:bfd55565177fb4710a98d7",
+        "android_client_info": {
+          "package_name": "com.spoelt.simpsonsquotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499838010614-3e6ib38q7hajn0j17ed7igejd8lsuspv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChExQkM5sf_lthbAn0SCdDk6yYc5vNZQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499838010614-3e6ib38q7hajn0j17ed7igejd8lsuspv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
