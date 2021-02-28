@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Simpsons Quotes</string>
     <string name="next_quote">Another Quote</string>
+    <string name="button_load_another_quote">Button Load Another Quote</string>
 </resources>

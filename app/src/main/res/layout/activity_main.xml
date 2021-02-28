@@ -18,17 +18,20 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@dimen/padding_layout"
             tools:context=".ui.activities.MainActivity">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:id="@+id/imageViewCharacterImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_height"
+                android:layout_margin="@dimen/margin_image"
                 android:contentDescription="@string/app_name"
                 android:scaleType="fitCenter"
+                app:imageUrl="@{viewModel.currentQuote.imageUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
@@ -40,9 +43,9 @@
                 android:layout_marginEnd="@dimen/margin"
                 android:paddingStart="@dimen/padding"
                 android:paddingEnd="@dimen/padding"
-                android:text=""
+                android:text="@{viewModel.currentQuote.quote}"
                 android:textAlignment="center"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/header_size"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +60,8 @@
                 android:layout_marginStart="@dimen/margin"
                 android:layout_marginTop="@dimen/margin"
                 android:layout_marginEnd="@dimen/margin"
-                android:text=""
-                android:textColor="@color/colorBlack"
+                android:text="@{viewModel.currentQuote.character}"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_size"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -88,17 +91,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/margin_fab"
+                android:contentDescription="@string/button_load_another_quote"
                 android:onClick="@{() -> viewModel.getNextQuote()}"
                 android:src="@drawable/ic_refresh_white_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.15" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
