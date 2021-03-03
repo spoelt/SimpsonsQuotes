@@ -1,5 +1,5 @@
 # SimpsonsQuotes
-Android App that displays various quotes from The Simpsons. Uses the Simpsons Quotes API by Jason Luboff (https://thesimpsonsquoteapi.glitch.me/)
+Android App that displays various quotes from The Simpsons.
 
 Concepts/Topics Learned:
 * MVVM
